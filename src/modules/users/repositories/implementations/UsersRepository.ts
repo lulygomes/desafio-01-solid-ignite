@@ -20,7 +20,8 @@ class UsersRepository implements IUsersRepository {
 
   create({ name, email }: ICreateUserDTO): User {
     // Complete aqui
-    const user = { name, email, admin: false };
+    const user = new User();
+    Object.assign(user, { name, email, admin: false });
     this.users.push(user);
 
     return user;
